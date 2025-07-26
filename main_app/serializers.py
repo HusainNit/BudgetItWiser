@@ -20,10 +20,15 @@ class BudgetSerializer(serializers.ModelSerializer):
 class ExpenseSerializer(serializers.ModelSerializer):
     user = serializers.SerializerMethodField()
     budget = serializers.SerializerMethodField()
+    budget_id = serializers.PrimaryKeyRelatedField(
+        queryset=Budget.objects.all(),
+        write_only=True,
+        source="budget"
+    )
 
     class Meta:
         model = Expense
-        fields = ("id","user","budget","expense_name","amount","expense_type","month","year","created_at","updated_at")
+        fields = ("id","user","budget_id","budget","expense_name","amount","expense_type","month","year","created_at","updated_at")
 
     def get_user(self, obj):
         return {
