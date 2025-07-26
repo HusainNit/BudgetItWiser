@@ -3,6 +3,7 @@ from django.db import transaction
 from django.contrib.auth.models import User
 from django.db.models.signals import post_delete
 from django.dispatch import receiver
+from decimal import Decimal
 
 # Create your models here.
 class Budget(models.Model):
@@ -12,7 +13,7 @@ class Budget(models.Model):
         ('over', 'Over Budget'),
     ]
      
-    user = models.OneToOneField(User,on_delete=models.CASCADE)
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
     month = models.IntegerField()
     year = models.IntegerField()
     total_budget = models.DecimalField(max_digits=10, decimal_places=4)
@@ -24,7 +25,7 @@ class Budget(models.Model):
         total_expenses = sum(e.amount for e in self.expense_set.all())
         if total_expenses > self.total_budget:
             self.status = 'over'
-        elif total_expenses >= 0.85 * self.total_budget:
+        elif total_expenses >= Decimal("0.85") * self.total_budget:
             self.status = 'warning'
         else:
             self.status = 'ok'
@@ -43,7 +44,6 @@ class Expense(models.Model):
     expense_name = models.CharField(max_length=100)
     amount = models.DecimalField(max_digits=10, decimal_places=4)
     expense_type = models.CharField(max_length=10, choices=TYPES)
-    date = models.DateField()
     month = models.IntegerField()
     year = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
