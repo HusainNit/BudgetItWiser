@@ -9,6 +9,7 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 
 
 # Create your views here.
+# TODO fix the get_querySet for budget and the expenses
 
 class BudgetViewSet(viewsets.ModelViewSet):
     queryset = Budget.objects.all()

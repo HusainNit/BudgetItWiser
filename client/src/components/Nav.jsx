@@ -1,8 +1,8 @@
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 
 // TODO fix user and handleLogOut and links names
-const Nav =({ user, handleLogOut })=>{
-   let userOptions;
+const Nav = ({ user, handleLogOut }) => {
+  let userOptions;
 
   if (user) {
     userOptions = (
@@ -30,11 +30,11 @@ const Nav =({ user, handleLogOut })=>{
   return (
     <header>
       <Link to="/">
-        <img className="logo" src="/images/logo.png" alt="logo" />
+        <img className="logo" src="" alt="logo" />
       </Link>
       {user ? userOptions : publicOptions}
     </header>
   );
-}
+};
 
-export default Nav
+export default Nav;
