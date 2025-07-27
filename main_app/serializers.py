@@ -28,7 +28,7 @@ class ExpenseSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Expense
-        fields = ("id","user","budget_id","budget","expense_name","amount","expense_type","month","year","created_at","updated_at")
+        fields = ("id","user","budget_id","budget","expense_name","amount","expense_type","created_at","updated_at")
 
     def get_user(self, obj):
         return {
