@@ -44,6 +44,8 @@ class Expense(models.Model):
     expense_name = models.CharField(max_length=100)
     amount = models.DecimalField(max_digits=10, decimal_places=4)
     expense_type = models.CharField(max_length=10, choices=TYPES)
+    month = models.IntegerField()
+    year = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
