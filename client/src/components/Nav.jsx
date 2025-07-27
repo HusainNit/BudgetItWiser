@@ -1,5 +1,6 @@
 import {Link} from "react-router-dom"
 
+// TODO fix user and handleLogOut
 const Nav =({ user, handleLogOut })=>{
    let userOptions;
 
