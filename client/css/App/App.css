@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    background-color: red;
+    max-width: 1248px;
+    margin: 0 auto;
+}
