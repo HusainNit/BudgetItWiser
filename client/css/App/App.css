@@ -3,8 +3,7 @@
     box-sizing: border-box;
 }
 
-.main {
-    background-color: red;
+main {
     max-width: 1248px;
     margin: 0 auto;
 }

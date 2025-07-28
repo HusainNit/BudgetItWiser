@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 
-// TODO fix user and handleLogOut and links names
+
 const Nav = ({ user, handleLogOut }) => {
   let userOptions;
 
   if (user) {
     userOptions = (
       <nav>
-        <Link to="/movies">Movies</Link>
-        <Link to="/search">Search</Link>
-
+        <Link to="/ai">AI</Link>
+        <Link to="/analytic">analytic</Link>
+        <Link to="/budget">budget</Link>
         <Link to="/profile">Profile</Link>
 
         <Link onClick={handleLogOut} to="/">
@@ -30,7 +30,7 @@ const Nav = ({ user, handleLogOut }) => {
   return (
     <header>
       <Link to="/">
-        <img className="logo" src="" alt="logo" />
+        <img className="logo" src="a" alt="logo" />
       </Link>
       {user ? userOptions : publicOptions}
     </header>
