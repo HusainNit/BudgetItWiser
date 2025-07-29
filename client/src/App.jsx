@@ -3,7 +3,7 @@ import "../css/components/nav.css";
 import "../css/pages/signin-&-register.css";
 
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Nav from "./components/Nav.jsx";
 import SingIn from "./pages/SignIn.jsx";
@@ -17,6 +17,17 @@ const App = () => {
     setUser(null);
     localStorage.clear();
   };
+  // TODO make check more of the backend check
+  const checkToken = () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setUser(token);
+    }
+  };
+
+  useEffect(() => {
+    checkToken();
+  }, []);
 
   return (
     <>

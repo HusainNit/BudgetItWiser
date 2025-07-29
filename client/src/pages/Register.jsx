@@ -2,6 +2,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { RegisterUser } from "../services/auth";
 import { useState } from "react";
 
+// TODO make backend validation instead of the frontEnd
 const Register = () => {
   let navigate = useNavigate();
 
