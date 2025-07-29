@@ -1,4 +1,3 @@
-import { data } from "react-router-dom";
 import Client from "./api";
 
 export const SignInUser = async (data) => {

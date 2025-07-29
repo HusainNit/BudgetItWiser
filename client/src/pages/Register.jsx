@@ -33,11 +33,12 @@ const Register = () => {
   };
 
   return (
-    <div className="register">
-      <label htmlFor="col" className="registerLable">
+    <div className="auth">
+      <label htmlFor="authForm" className="authLabel">
         Register
       </label>
-      <form onSubmit={handleSubmit} className="col" id="col">
+
+      <form onSubmit={handleSubmit} className="authForm" id="authForm">
         <div className="input-wrapper">
           <label htmlFor="username" className="titleFiled">
             Username
@@ -46,13 +47,16 @@ const Register = () => {
             onChange={handleChange}
             id="username"
             type="text"
-            placeholder="John Doe"
+            placeholder="husain"
             value={formValues.username}
             required
             autoComplete="username"
-            className="nameReg"
+            className="authUsername"
+            pattern="[\w\s]{3,}"
           />
+          <small>must have at least 3 letters and _ </small>
         </div>
+
         <div className="input-wrapper">
           <label htmlFor="email" className="titleFiled">
             Email
@@ -65,9 +69,12 @@ const Register = () => {
             value={formValues.email}
             required
             autoComplete="email"
-            className="emailReg"
+            className="authEmail"
+            pattern="[\w\-\.]{3,}@[a-zA-Z]{3,}\.[a-zA-Z]{3,}"
           />
+          <small>must have at least 3 letters and @ </small>
         </div>
+
         <div className="input-wrapper">
           <label htmlFor="password" className="titleFiled">
             Password
@@ -78,9 +85,15 @@ const Register = () => {
             id="password"
             value={formValues.password}
             required
-            className="passReg"
+            className="authPassword"
+            pattern=".{8,}" // TODO make react Stats for validation
           />
+          <small>
+            must have at least 8 letters, one uppercase letter, and one of
+            @#$%&*/\
+          </small>
         </div>
+
         <div className="input-wrapper">
           <label htmlFor="confirmPassword" className="titleFiled">
             Confirm Password
@@ -93,24 +106,28 @@ const Register = () => {
             required
           />
         </div>
-        <div className="RegbtnC">
+
+        <div className="button-wrapper">
           <button
-            className="Regbtn"
+            className="authButton"
             disabled={
               !formValues.email ||
-              (!formValues.password &&
-                formValues.password === formValues.confirmPassword)
+              !formValues.username ||
+              !formValues.password ||
+              !formValues.confirmPassword ||
+              formValues.password !== formValues.confirmPassword
             }
           >
             Register
           </button>
         </div>
       </form>
-      <div className="linkLoginC">
-        <label htmlFor="linkReg" className="labsign">
+
+      <div className="authLink-wrapper">
+        <label htmlFor="authLink" className="authLinkTitle">
           Already have an Account?
         </label>
-        <Link to="/signin" id="linkReg" className="linkReg">
+        <Link to="/signin" id="authLink" className="authLink">
           sign In
         </Link>
       </div>

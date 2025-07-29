@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap");
+
+.auth {
+  max-width: 628px;
+  margin: 30px auto;
+  border: 2px solid black;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.authLabel {
+  display: flex;
+  justify-content: center;
+  font-size: 2.3rem;
+  font-weight: bolder;
+  font-family: "Winky Rough", sans-serif;
+  margin-bottom: 40px;
+}
+
+.authForm {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.titleFiled {
+  font-family: "Winky Rough", sans-serif;
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+.input-wrapper,
+.button-wrapper,
+.authLink-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-wrapper {
+  margin-bottom: 40px;
+}
+
+input {
+  width: 80%;
+  border: 3px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+input:valid {
+  outline: none;
+  border-color: rgb(20, 165, 20);
+}
+
+input:invalid {
+  outline: none;
+  border-color: black;
+}
+
+input:valid + small {
+  visibility: hidden;
+}
+
+button {
+  margin: 20px 0;
+  color: black;
+  background-color: #846fff;
+  border: 2px solid black;
+  font-family: "Winky Rough", sans-serif;
+  font-size: 1.2rem;
+  border-radius: 2px;
+  padding: 10px 30px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ab9df9;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+  color: #666;
+  border-color: #999;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+

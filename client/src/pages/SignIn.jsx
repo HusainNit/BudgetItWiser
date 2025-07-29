@@ -23,15 +23,16 @@ const SignIn = ({ setUser }) => {
   };
 
   return (
-    <div className="signin">
-      <label htmlFor="col" className="signInLable">
-        sign In
+    <div className="auth">
+      <label htmlFor="authForm" className="authLabel">
+        Sign In
       </label>
 
-      <form className="col" id="col" onSubmit={handleSubmit}>
+      <form className="authForm" id="authForm" onSubmit={handleSubmit}>
+
         <div className="input-wrapper">
           <label htmlFor="username" className="titleFiled">
-            username
+            Username
           </label>
           <input
             onChange={handleChange}
@@ -40,10 +41,11 @@ const SignIn = ({ setUser }) => {
             placeholder="husain"
             value={formValues.username}
             required
-            autoComplete="usrname"
-            className="username"
+            autoComplete="username"
+            className="authUsername"
           />
         </div>
+
         <div className="input-wrapper">
           <label htmlFor="email" className="titleFiled">
             Email
@@ -56,9 +58,10 @@ const SignIn = ({ setUser }) => {
             value={formValues.email}
             required
             autoComplete="email"
-            className="emaillogin"
+            className="authEmail"
           />
         </div>
+
         <div className="input-wrapper">
           <label htmlFor="password" className="titleFiled">
             Password
@@ -69,23 +72,25 @@ const SignIn = ({ setUser }) => {
             id="password"
             value={formValues.password}
             required
-            className="passLogin"
+            className="authPassword"
           />
         </div>
-        <div className="btnLoginC">
+
+        <div className="button-wrapper">
           <button
-            className="btnlogin"
+            className="authButton"
             disabled={!formValues.email || !formValues.password}
           >
             Sign In
           </button>
         </div>
       </form>
-      <div className="linkRegC">
-        <label htmlFor="linkReg" className="labsign">
+
+      <div className="authLink-wrapper">
+        <label htmlFor="authLink" className="authLinkTitle">
           Don't have an Account?
         </label>
-        <Link to="/register" id="linkReg" className="linkReg">
+        <Link to="/register" id="authLink" className="authLink">
           register
         </Link>
       </div>
