@@ -1,14 +1,16 @@
 import "../css/pages/app.css";
 import "../css/components/nav.css";
 import "../css/pages/signin-&-register.css";
+import "../css/pages/budget.css";
 
 import { Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 
 import Nav from "./components/Nav.jsx";
 import SingIn from "./pages/SignIn.jsx";
 import Home from "./pages/Home.jsx";
 import Register from "./pages/Register.jsx";
+import Budget from "./pages/Budget.jsx";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -37,6 +39,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/signin" element={<SingIn setUser={setUser} />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/budget" element={<Budget user={user} />} />
         </Routes>
       </main>
     </>
