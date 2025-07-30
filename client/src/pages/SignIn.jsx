@@ -29,7 +29,6 @@ const SignIn = ({ setUser }) => {
       </label>
 
       <form className="authForm" id="authForm" onSubmit={handleSubmit}>
-
         <div className="input-wrapper">
           <label htmlFor="username" className="titleFiled">
             Username
@@ -79,7 +78,9 @@ const SignIn = ({ setUser }) => {
         <div className="button-wrapper">
           <button
             className="authButton"
-            disabled={!formValues.email || !formValues.password}
+            disabled={
+              !formValues.email || !formValues.password || !formValues.username
+            }
           >
             Sign In
           </button>

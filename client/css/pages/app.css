@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap");
 
 * {
   margin: 0;
@@ -10,10 +9,10 @@ main {
   margin: 0 auto;
 }
 
-a {
+/* a {
   font-family: "Winky Rough", sans-serif;
   color: #846fff;
   font-weight: bolder;
-}
+} */
 
 

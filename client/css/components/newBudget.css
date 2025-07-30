@@ -1,0 +1,31 @@
+input[type="range"] {
+  accent-color: #846fff;
+}
+
+.input-wrapper output {
+  color: black;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: large;
+}
+
+.newBudgetContainer {
+  width: 40%;
+  margin: 20px auto;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.AddBudgetLabel {
+  display: flex;
+  justify-content: center;
+  font-size: 2.3rem;
+  font-weight: bolder;
+  font-family: "Winky Rough", sans-serif;
+}
+
+output {
+  border: 2px solid rgba(160, 160, 160, 0.575);
+  background-color: #f6f4ff;
+}
