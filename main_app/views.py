@@ -1,9 +1,6 @@
-from django.shortcuts import render
 from .models import Budget, Expense
 from .serializers import BudgetSerializer, ExpenseSerializer ,SignUpSerializer
 from rest_framework import viewsets , generics
-from django.contrib.auth.models import User
-from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth.models import User
 from rest_framework.permissions import AllowAny, IsAuthenticated
 
