@@ -3,6 +3,7 @@ import "../css/components/nav.css";
 import "../css/pages/signin-&-register.css";
 import "../css/pages/budget.css";
 import "../css/components/newBudget.css";
+import "../css/components/editBudget.css"
 
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect, use } from "react";

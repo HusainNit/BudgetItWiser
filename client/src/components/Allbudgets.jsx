@@ -1,4 +1,4 @@
-import { BudgetGetter } from "../services/budget";
+import { BudgetsGetter } from "../services/budget";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
@@ -7,7 +7,7 @@ const AllBudgets = ({ user }) => {
 
   useEffect(() => {
     const budgetFetch = async () => {
-      const data = await BudgetGetter();
+      const data = await BudgetsGetter();
       setBudgetList(data);
     };
     budgetFetch();
