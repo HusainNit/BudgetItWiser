@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap");
+
+.ExpenseContainer {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.expense-wrapper {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px 20px;
+  width: 230px;
+  background-color: #f6f4ff;
+ 
+}
+
+.expense-wrapper:hover {
+ 
+  box-shadow: -5px 5px 20px  gray;
+}
+
+.PageTitle,
+.underText {
+  font-family: "Winky Rough", sans-serif;
+}
