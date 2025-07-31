@@ -37,17 +37,17 @@ export const OneBudgetGetter = async (id) => {
 
 export const BudgetEdit = async (obj, id) => {
   try {
-    const res = await Client.put(`/api/budget/${id}`, obj);
+    const res = await Client.put(`/api/budget/${id}/`, obj);
     return res;
   } catch (error) {
-    console.error("Error in setting the budget :", error.Client.message);
+    console.error("Error in setting the budget :", error.message);
     throw error;
   }
 };
 
 export const BudgetDelete = async (id) => {
   try {
-    const res = await Client.delete(`/api/budget/${id}`);
+    const res = await Client.delete(`/api/budget/${id}/`);
     return res;
   } catch (error) {
     console.error("Error in setting the budget :", error.Client.message);

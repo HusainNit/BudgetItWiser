@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 
 import AllBudgets from "../components/Allbudgets";
 import AddBudget from "../components/AddBudget";
-import EditBudget from "../components/EditBudget";
+import EditBudget from "../components/Edit-DeleteBudget";
 
 const Budget = ({ user }) => {
   return (

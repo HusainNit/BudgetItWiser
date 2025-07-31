@@ -2,17 +2,21 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { BudgetEdit } from "../services/budget";
 import { OneBudgetGetter } from "../services/budget";
+import { BudgetDelete } from "../services/budget";
 
 const EditBudget = ({ user }) => {
   const { id } = useParams();
   let navigate = useNavigate();
-  let [budget, setBudget] = useState(null);
   const initialState = { year: "", month: "", total_budget: "" };
 
   useEffect(() => {
     const getBudget = async (id) => {
       const data = await OneBudgetGetter(id);
-      setBudget(data);
+      setFormValues({
+        year: data.year || "0000",
+        month: data.month || "0",
+        total_budget: data.total_budget || "",
+      });
     };
     getBudget(id);
   }, []);
@@ -25,9 +29,19 @@ const EditBudget = ({ user }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const payload = await BudgetEdit(formValues, id);
-    setFormValues(initialState);
+    let payload;
+
+    switch (e.nativeEvent.submitter.id) {
+      case "delete":
+        payload = await BudgetDelete(id);
+        break;
+      case "add":
+        payload = await BudgetEdit(formValues, id);
+        break;
+    }
+
     if (payload) {
+      setFormValues(initialState);
       navigate("/budgets/");
     }
   };
@@ -62,7 +76,7 @@ const EditBudget = ({ user }) => {
                 title="Enter a 4-digit year like 2025"
                 max={new Date().getFullYear()}
               />
-              <output htmlFor="month">{formValues.year || "0000"}</output>
+              <output htmlFor="month">{formValues.year}</output>
             </div>
 
             <div className="input-wrapper">
@@ -82,7 +96,7 @@ const EditBudget = ({ user }) => {
                 title="Enter a 1 or 2 digit month like 9 or 11"
                 max="12"
               />
-              <output htmlFor="month">{formValues.month || "0"}</output>
+              <output htmlFor="month">{formValues.month}</output>
             </div>
 
             <div className="input-wrapper">
@@ -104,9 +118,10 @@ const EditBudget = ({ user }) => {
               />
             </div>
 
-            <div className="button-wrapper">
+            <div className="button-wrapper twoButtons">
               <button
                 className="AddBudgetButton"
+                id="add"
                 disabled={
                   !formValues.year ||
                   !formValues.month ||
@@ -114,6 +129,17 @@ const EditBudget = ({ user }) => {
                 }
               >
                 Edit Budget
+              </button>
+              <button
+                className="DeleteBudgetButton"
+                id="delete"
+                disabled={
+                  !formValues.year ||
+                  !formValues.month ||
+                  !formValues.total_budget
+                }
+              >
+                Delete Budget
               </button>
             </div>
           </form>

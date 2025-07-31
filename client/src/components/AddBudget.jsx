@@ -15,8 +15,8 @@ const AddBudget = ({ user }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const payload = await BudgetSetter(formValues);
-    setFormValues(initialState);
     if (payload) {
+      setFormValues(initialState);
       navigate("/budgets/");
     }
   };
