@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap");
+
+.ProfileEditContainer {
+  width: 40%;
+  margin: 20px auto;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: center;
+}

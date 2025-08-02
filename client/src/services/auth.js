@@ -19,11 +19,40 @@ export const SignInUser = async (data) => {
 
 export const RegisterUser = async (data) => {
   try {
-    console.log(data);
     const res = await Client.post("auth/sign-up/", data);
     return res;
   } catch (error) {
     console.log(`error in sign up user:${error.message}`);
+    throw error;
+  }
+};
+
+export const UserGetter = async () => {
+  try {
+    const res = await Client.get("auth/user/");
+    return res.data;
+  } catch (error) {
+    console.log(`error in user getter:${error.message}`);
+    throw error;
+  }
+};
+
+export const UserSetter = async (obj) => {
+  try {
+    const res = await Client.put("auth/user/", obj);
+    return res;
+  } catch (error) {
+    console.log(`error in user getter:${error.message}`);
+    throw error;
+  }
+};
+
+export const UserDelete = async () => {
+  try {
+    const res = await Client.delete("auth/user/");
+    return res;
+  } catch (error) {
+    console.log(`error in user getter:${error.message}`);
     throw error;
   }
 };
