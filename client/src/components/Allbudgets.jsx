@@ -23,7 +23,7 @@ const AllBudgets = ({ user }) => {
                 <button>Add Budget</button>
               </Link>
             </div>
-            <h1 className="PageTitle">Budget</h1>
+            <h1 className="PageTitle">Budgets</h1>
             <small className="underText">Create and truck your budgets</small>
 
             <div className="budget-wrapper">
@@ -35,7 +35,7 @@ const AllBudgets = ({ user }) => {
                       {budget.month}/{budget.year}
                     </small>
                     <h2 className="upSpace fonth2">
-                      {budget.total_budget + " BD"}
+                      {"Budget Limit: " + budget.total_budget + " BD"}
                     </h2>
                     <h2 className="fonth2">Status: {budget.status}</h2>
                   </Link>

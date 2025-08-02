@@ -36,9 +36,9 @@ const AllExpenses = ({ user }) => {
                       <h2 className="fontTitle">Expense #{displayCount++} </h2>
                       <h3 className="expenseName">{expense.expense_name}</h3>
                       <h2 className="upSpace fonth2 expenseDownmar">
-                        {expense.max_expense_budget + " BD"}
+                        {"Expense Limit: "+expense.max_expense_budget + " BD"}
                       </h2>
-                      <h2 className=" fonth2">{expense.amount + " BD"}</h2>
+                      <h2 className=" fonth2">{"Spent: "+expense.amount + " BD"}</h2>
                       <h2 className="fonth2">
                         Expense type: {expense.expense_type}
                       </h2>
