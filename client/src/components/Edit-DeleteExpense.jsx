@@ -42,7 +42,6 @@ const EditExpense = ({ user }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     let payload;
-    console.log(e);
 
     switch (e.nativeEvent.submitter.id) {
       case "delete":

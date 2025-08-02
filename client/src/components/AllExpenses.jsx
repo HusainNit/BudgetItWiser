@@ -6,6 +6,7 @@ import { ExpensesGetter } from "../services/expenses";
 const AllExpenses = ({ user }) => {
   const { id } = useParams();
   const [expenseList, setExpenseList] = useState(null);
+  let displayCount = 1;
 
   useEffect(() => {
     const budgetFetch = async () => {
@@ -32,7 +33,7 @@ const AllExpenses = ({ user }) => {
                 expense.budget.id == id ? (
                   <Link to={`${expense.id}/edit`} key={idx}>
                     <div className="expense-wrapper" key={expense.id}>
-                      <h2 className="fontTitle">Expense #{idx + 1} </h2>
+                      <h2 className="fontTitle">Expense #{displayCount++} </h2>
                       <h3 className="expenseName">{expense.expense_name}</h3>
                       <h2 className="upSpace fonth2 expenseDownmar">
                         {expense.max_expense_budget + " BD"}

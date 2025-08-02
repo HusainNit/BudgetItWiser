@@ -1,0 +1,7 @@
+.EditExpenseContainer {
+  width: 40%;
+  margin: 20px auto;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
