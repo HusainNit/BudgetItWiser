@@ -11,17 +11,28 @@
   border: 2px solid black;
   border-radius: 5px;
   padding: 10px 20px;
-  width: 230px;
+  width: 380px;
   background-color: #f6f4ff;
- 
 }
 
 .expense-wrapper:hover {
- 
-  box-shadow: -5px 5px 20px  gray;
+  box-shadow: -5px 5px 20px gray;
 }
 
 .PageTitle,
 .underText {
   font-family: "Winky Rough", sans-serif;
+}
+
+.ExpenseContainer a {
+  text-decoration: none;
+  color: black;
+}
+
+.expenseName {
+  text-transform: uppercase;
+}
+
+.expenseDownmar {
+  margin-bottom: 0;
 }

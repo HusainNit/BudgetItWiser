@@ -5,6 +5,8 @@ import "../css/pages/budget.css";
 import "../css/components/newBudget.css";
 import "../css/components/editBudget.css";
 import "../css/pages/expense.css";
+import "../css/components/newExpense.css";
+import "../css/components/editExpense.css";
 
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect, use } from "react";
@@ -44,7 +46,10 @@ const App = () => {
           <Route path="/signin" element={<SingIn setUser={setUser} />} />
           <Route path="/register" element={<Register />} />
           <Route path="/budgets/*" element={<Budget user={user} />} />
-          <Route path="/budgets/expenses/*" element={<Expense user={user} />} />
+          <Route
+            path="/budgets/:id/expenses/*"
+            element={<Expense user={user} />}
+          />
         </Routes>
       </main>
     </>

@@ -1,0 +1,14 @@
+.addExpenseContainer {
+  width: 40%;
+  margin: 20px auto;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+select {
+  width: 80%;
+  border: 3px solid black;
+  border-radius: 5px;
+  padding: 5px;
+}

@@ -29,7 +29,7 @@ const AllBudgets = ({ user }) => {
             <div className="budget-wrapper">
               {budgetList.map((budget, idx) => (
                 <div className="budgetData" key={idx}>
-                  <Link to="expenses/" className="fullLinkArea">
+                  <Link to={`${budget.id}/expenses/`} className="fullLinkArea">
                     <h2 className="fontTitle">Monthly Budget</h2>
                     <small className="underText">
                       {budget.month}/{budget.year}
