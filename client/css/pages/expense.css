@@ -29,6 +29,10 @@
   color: black;
 }
 
+.expense-wrapper:hover .expenseName {
+  text-decoration: underline;
+}
+
 .expenseName {
   text-transform: uppercase;
 }
