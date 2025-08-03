@@ -1,0 +1,17 @@
+.analticContainer {
+  height: 100vh;
+}
+
+.analticContainer canvas {
+  flex: 0 1 auto;
+  max-width: 100%;
+  height: auto;
+  margin: 50px 0;
+}
+
+.analticContainer canvas {
+  width: 100% !important;
+  height: auto !important;
+  border: 2px solid black;
+  border-radius: 5px;
+}

@@ -9,6 +9,7 @@ import "../css/components/newExpense.css";
 import "../css/components/editExpense.css";
 import "../css/pages/profile.css";
 import "../css/components/editProfile.css";
+import "../css/pages/analytic.css";
 
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect, use } from "react";
@@ -20,6 +21,7 @@ import Register from "./pages/Register.jsx";
 import Budget from "./pages/Budget.jsx";
 import Expense from "./pages/Expenses.jsx";
 import Profile from "./pages/Profile.jsx";
+import Analytic from "./pages/Analytic.jsx";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -57,6 +59,7 @@ const App = () => {
             path="/profile/*"
             element={<Profile user={user} setUser={setUser} />}
           />
+          <Route path="/analytic/" element={<Analytic user={user} />} />
         </Routes>
       </main>
     </>

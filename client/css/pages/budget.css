@@ -102,3 +102,58 @@
 .budget-wrapper {
   margin-bottom: 80px;
 }
+
+.gaugeContainer {
+  width: 260px;
+  height: 150px;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.gaugeCenterText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  pointer-events: none;
+  font-family: "Winky Rough", sans-serif;
+}
+
+.gaugeLabels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -35px;
+  padding: 0 10px;
+  font-family: "Winky Rough", sans-serif;
+}
+
+.labelBlock {
+  text-align: center;
+}
+
+.labelTitle {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+  font-family: "Winky Rough", sans-serif;
+}
+
+.labelValue {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  font-family: "Winky Rough", sans-serif;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+.fontFix {
+  font-size: 3rem;
+}

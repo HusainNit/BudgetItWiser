@@ -1,13 +1,15 @@
 import { BudgetsGetter } from "../services/budget";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import OneBudgetChart from "../charts/OneBudgetChart";
+import { chartGetter } from "../services/chart";
 
 const AllBudgets = ({ user }) => {
   const [budgetList, setBudgetList] = useState(null);
 
   useEffect(() => {
     const budgetFetch = async () => {
-      const data = await BudgetsGetter();
+      const data = await chartGetter();
       setBudgetList(data);
     };
     budgetFetch();
@@ -34,10 +36,15 @@ const AllBudgets = ({ user }) => {
                     <small className="underText">
                       {budget.month}/{budget.year}
                     </small>
-                    <h2 className="upSpace fonth2">
-                      {"Budget Limit: " + budget.total_budget + " BD"}
-                    </h2>
-                    <h2 className="fonth2">Status: {budget.status}</h2>
+                    <div className="labelBlock">
+                      <span className="labelTitle">Status: </span>
+                      <span className="labelValue">{budget.status} </span>
+                    </div>
+                    <OneBudgetChart
+                      total_budget={budget.total_budget}
+                      total_expenses={budget.total_expenses}
+                      status={budget.status}
+                    />
                   </Link>
 
                   <div className="budgetActions">

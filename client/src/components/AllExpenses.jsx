@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import { ExpensesGetter } from "../services/expenses";
+import ExpenseBarChart from "../charts/ExpenseBarChart";
 
 const AllExpenses = ({ user }) => {
   const { id } = useParams();
@@ -35,11 +36,13 @@ const AllExpenses = ({ user }) => {
                     <div className="expense-wrapper" key={expense.id}>
                       <h2 className="fontTitle">Expense #{displayCount++} </h2>
                       <h3 className="expenseName">{expense.expense_name}</h3>
-                      <h2 className="upSpace fonth2 expenseDownmar">
-                        {"Expense Limit: "+expense.max_expense_budget + " BD"}
-                      </h2>
-                      <h2 className=" fonth2">{"Spent: "+expense.amount + " BD"}</h2>
-                      <h2 className="fonth2">
+
+                      <ExpenseBarChart
+                        total={expense.max_expense_budget}
+                        spent={expense.amount}
+                      />
+
+                      <h2 className="fonth2 center">
                         Expense type: {expense.expense_type}
                       </h2>
                     </div>
