@@ -10,6 +10,8 @@ import "../css/components/editExpense.css";
 import "../css/pages/profile.css";
 import "../css/components/editProfile.css";
 import "../css/pages/analytic.css";
+import "../css/components/footer.css";
+import "../css/pages/main.css";
 
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect, use } from "react";
@@ -62,6 +64,17 @@ const App = () => {
           <Route path="/analytic/" element={<Analytic user={user} />} />
         </Routes>
       </main>
+      <footer>
+        <div className="footer-content">
+          <p>&copy; 2025 BugetitWiser. Budget smarter, live wiser.</p>
+          <nav>
+            <a href="/privacy-policy">Privacy Policy</a> |
+            <a href="/terms-of-use">Terms of Use</a> |
+            <a href="/contact">Contact Us</a>
+          </nav>
+          <small>Made with ❤️ to empower better budgeting decisions.</small>
+        </div>
+      </footer>
     </>
   );
 };

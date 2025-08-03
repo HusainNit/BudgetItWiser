@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap");
+body {
+  font-family: "Winky Rough", sans-serif;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #6b59bf;
+  color: black;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #a18df9;
+  transform: scale(1.05);
+}
+
+.hero {
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #f6f4ff, #5c4aab);
+  animation: fadeIn 1s ease-in forwards;
+  margin-top: 20px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 24px;
+}
+
+.features {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: auto;
+  animation: fadeSlideUp 1s ease-in forwards;
+}
+
+.features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features li {
+  margin-bottom: 18px;
+  position: relative;
+  padding-left: 28px;
+}
+
+.features li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #f6f4ff;
+}
+
+.tagline {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.2rem;
+  padding: 40px 20px;
+  background-color: #f6f4ff;
+  animation: fadeSlideUp 1.2s ease-in forwards;
+}
+
+.cta {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f6f4ff;
+  animation: fadeSlideUp 1.4s ease-in forwards;
+  margin-bottom: 50px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-out;
+}
+
+section.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,5 +1,11 @@
 .analticContainer {
-  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .analticContainer canvas {

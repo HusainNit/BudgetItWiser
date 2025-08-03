@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap");
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f6f4ff;
+  color: #333;
+  text-align: center;
+  padding: 30px 20px;
+  font-family: "Winky Rough", sans-serif;
+  font-size: 14px;
+  height: 120px;
+  border-top: 1px solid #846fff;
+  margin-top: 50px;
+}
+
+.footer-content nav {
+  margin: 15px 0;
+}
+
+.footer-content a {
+  color: #846fff;
+  text-decoration: none;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+
+.footer-content a:hover {
+  color: #846fff;
+  text-decoration: underline;
+}
+
+small {
+  display: block;
+  margin-top: 10px;
+  font-style: italic;
+  color: #666;
+}
