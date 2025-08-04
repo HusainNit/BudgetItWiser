@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-
 const Nav = ({ user, handleLogOut }) => {
   let userOptions;
 
@@ -30,7 +29,7 @@ const Nav = ({ user, handleLogOut }) => {
   return (
     <header>
       <Link to="/">
-        <img className="logo" src="a" alt="logo" />
+        <img className="logo" src="imgs/icon.png" alt="logo" />
       </Link>
       {user ? userOptions : publicOptions}
     </header>

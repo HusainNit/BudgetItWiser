@@ -26,3 +26,7 @@ header a {
 header a:hover {
   text-decoration-color: #846fff;
 }
+
+.logo {
+  width: 50px;
+}

@@ -53,6 +53,9 @@ class ExpenseViewSet(viewsets.ModelViewSet):
     serializer_class = ExpenseSerializer
     permission_classes = [IsAuthenticated]
 
+    def get_queryset(self):
+        return Expense.objects.filter(budget__user=self.request.user)
+
 
 class SignUpView(
     generics.CreateAPIView
