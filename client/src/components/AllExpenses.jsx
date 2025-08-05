@@ -2,20 +2,27 @@ import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import { ExpensesGetter } from "../services/expenses";
-import ExpenseBarChart from "../charts/ExpenseBarChart";
+import ExpenseBarChart from "../components/charts/ExpenseBarChart";
+import CircleProgress from "./ui/CircleProgress";
 
 const AllExpenses = ({ user }) => {
   const { id } = useParams();
   const [expenseList, setExpenseList] = useState(null);
+  const [loading, setLoading] = useState(false);
   let displayCount = 1;
 
   useEffect(() => {
     const budgetFetch = async () => {
+      setLoading(true);
       const data = await ExpensesGetter();
-      setExpenseList(data);
+      if (data) {
+        setExpenseList(data);
+        setLoading(false);
+      }
     };
     budgetFetch();
   }, []);
+
   return (
     <>
       {user ? (
@@ -54,7 +61,7 @@ const AllExpenses = ({ user }) => {
         ) : Array.isArray(expenseList) && expenseList.length > 0 ? (
           <h1 className="center"> no data</h1>
         ) : (
-          <h1 className="center">Loading data....</h1>
+          <CircleProgress loading={loading} />
         )
       ) : (
         <div className="CantView">

@@ -12,7 +12,7 @@ import "../css/components/editProfile.css";
 import "../css/pages/analytic.css";
 import "../css/components/footer.css";
 import "../css/pages/main.css";
-
+import "../css/pages/ai.css";
 
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect, use } from "react";

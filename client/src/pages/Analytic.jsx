@@ -1,7 +1,7 @@
-import BudgetChart from "../charts/BudgetChart";
-import CategoryExpensesBar from "../charts/CategoryExpensesBar";
-import BudgetStatusPieChart from "../charts/BudgetStatusPieChart";
-import ExpenseStatusBarChart from "../charts/ExpenseStatusBarChart";
+import BudgetChart from "../components/charts/BudgetChart";
+import CategoryExpensesBar from "../components/charts/CategoryExpensesBar";
+import BudgetStatusPieChart from "../components/charts/BudgetStatusPieChart";
+import ExpenseStatusBarChart from "../components/charts/ExpenseStatusBarChart";
 
 import { Link } from "react-router-dom";
 

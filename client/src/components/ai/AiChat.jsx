@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CircleProgress from "../ui/CircleProgress";
 
 function AiChat() {
   const [input, setInput] = useState("");
@@ -6,18 +7,23 @@ function AiChat() {
   const [loading, setLoading] = useState(false);
 
   const sendMessage = async () => {
-    const result = await window.puter.ai.chat(input);
+    setLoading(true); // Show loader before sending
 
-    setChatHistory((prev) => [
-      ...prev,
-      {
-        role: "user",
-        content: input,
-      },
-      result.message,
-    ]);
+    try {
+      const result = await window.puter.ai.chat(input);
 
-    setInput("");
+      setChatHistory((prev) => [
+        ...prev,
+        {
+          role: "user",
+          content: input,
+        },
+        result.message,
+      ]);
+    } finally {
+      setLoading(false); // Hide loader after response
+      setInput("");
+    }
   };
 
   return (
@@ -43,6 +49,8 @@ function AiChat() {
           </div>
         ))}
       </div>
+
+      {loading && <CircleProgress loading={loading} />}
     </div>
   );
 }

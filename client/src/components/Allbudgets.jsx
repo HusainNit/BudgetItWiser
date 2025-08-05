@@ -1,16 +1,22 @@
 import { BudgetsGetter } from "../services/budget";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import OneBudgetChart from "../charts/OneBudgetChart";
+import OneBudgetChart from "../components/charts/OneBudgetChart";
 import { chartGetter } from "../services/chart";
+import CircleProgress from "./ui/CircleProgress";
 
 const AllBudgets = ({ user }) => {
   const [budgetList, setBudgetList] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const budgetFetch = async () => {
+      setLoading(true);
       const data = await chartGetter();
-      setBudgetList(data);
+      if (data) {
+        setBudgetList(data);
+        setLoading(false);
+      }
     };
     budgetFetch();
   }, []);
@@ -59,7 +65,7 @@ const AllBudgets = ({ user }) => {
         ) : Array.isArray(budgetList) && budgetList.length > 0 ? (
           <h1 className="center"> no data</h1>
         ) : (
-          <h1 className="center">Loading data....</h1>
+          <CircleProgress  loading={loading} />
         )
       ) : (
         <div className="CantView">

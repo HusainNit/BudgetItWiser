@@ -10,7 +10,7 @@ import {
 } from "chart.js";
 
 import { useState, useEffect } from "react";
-import { ExpensesGetter } from "../services/expenses";
+import { ExpensesGetter } from "../../services/expenses";
 
 ChartJS.register(
   CategoryScale,

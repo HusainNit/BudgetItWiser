@@ -1,4 +1,4 @@
-import { BudgetsGetter } from "../services/budget";
+import { BudgetsGetter } from "../../services/budget";
 import { useEffect, useState } from "react";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, Title } from "chart.js";

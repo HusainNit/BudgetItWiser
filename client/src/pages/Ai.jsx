@@ -1,4 +1,4 @@
-import AiChat from "../ai/AiChat"
+import AiChat from "../components/ai/AiChat"
 
 const Ai = ({user})=>{
     return (

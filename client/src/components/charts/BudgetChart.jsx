@@ -20,7 +20,7 @@ ChartJS.register(
   Title
 );
 import { useEffect, useState } from "react";
-import { chartGetter } from "../services/chart";
+import { chartGetter } from "../../services/chart";
 
 const BudgetChart = () => {
   const [data, setData] = useState([]);

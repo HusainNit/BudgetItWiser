@@ -9,7 +9,7 @@ import {
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import { useEffect, useState } from "react";
-import { ExpensesGetter } from "../services/expenses";
+import { ExpensesGetter } from "../../services/expenses";
 
 ChartJS.register(
   BarElement,

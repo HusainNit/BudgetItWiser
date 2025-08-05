@@ -3,22 +3,26 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { UserGetter } from "../services/auth";
 import { UserDelete } from "../services/auth";
+import CircleProgress from "./ui/CircleProgress";
 
 const ProfileData = ({ user, setUser }) => {
   let navigate = useNavigate();
   let [userdata, setUserData] = useState();
+  let [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const ProfileData = async () => {
+      setLoading(true);
       let payload = await UserGetter();
       if (payload) {
         setUserData(payload);
+        setLoading(false);
       }
     };
     ProfileData();
   }, []);
 
-  const DeleteUser = async() => {
+  const DeleteUser = async () => {
     let d = await UserDelete();
     localStorage.clear();
     setUser(null);
@@ -50,7 +54,7 @@ const ProfileData = ({ user, setUser }) => {
             </div>
           </div>
         ) : (
-          <h1 className="center">Loading data....</h1>
+          <CircleProgress loading={loading} />
         )
       ) : (
         <div className="CantView">
