@@ -13,6 +13,7 @@ import "../css/pages/analytic.css";
 import "../css/components/footer.css";
 import "../css/pages/main.css";
 
+
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect, use } from "react";
 
@@ -24,6 +25,7 @@ import Budget from "./pages/Budget.jsx";
 import Expense from "./pages/Expenses.jsx";
 import Profile from "./pages/Profile.jsx";
 import Analytic from "./pages/Analytic.jsx";
+import Ai from "./pages/Ai.jsx";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -62,6 +64,7 @@ const App = () => {
             element={<Profile user={user} setUser={setUser} />}
           />
           <Route path="/analytic/" element={<Analytic user={user} />} />
+          <Route path="/ai/" element={<Ai user={user} />} />
         </Routes>
       </main>
       <footer>
