@@ -8,6 +8,8 @@ Full-stack budgeting application built with the PDR stack( PostgreSQL, Django RE
 
 Users can securely sign up and log in via JWT to track budgets and expenditures. Real-time analytics using React visualize financial behaviors, while a Django backend with PostgreSQL ensures scalable APIs and reliable CRUD operations across devices.
 
+An AI-driven budgeting assistant offers personalized financial insights, assessments of spending behaviors, enhancing budgeting ease.
+
 ## Table of Contents:
 
 - [Deployed link](#deployed-link)
@@ -17,18 +19,18 @@ Users can securely sign up and log in via JWT to track budgets and expenditures.
   - [UserStory](#userstory)
   - [Component Hierarchy Diagram (CHD)](#component-hierarchy-diagrams-chd)
 - [Website ShowCase](#website-showcase)
-    - [ScreenShots](#screenshots)
-    - [Recording](#recording)
+  - [ScreenShots](#screenshots)
+  - [Recording](#recording)
 - [How to run locally](#how-to-run-locally)
 - [Technologies Used](#technologies-used)
-    - [PDR Stack](#pdr-stack)
-    - [Client Packages](#client-packages)
-    - [Server Packages](#client-packages)
+  - [PDR Stack](#pdr-stack)
+  - [Client Packages](#client-packages)
+  - [Server Packages](#client-packages)
 - [Future Enhancements](#future-enhancements)
 
 ## Deployed link:
 
-[!* still working on it *!]()
+[!_ still working on it _!]()
 
 <br>
 
@@ -98,51 +100,52 @@ Users can securely sign up and log in via JWT to track budgets and expenditures.
 
 ## How to run locally:
 
-   - Clone the repository.
-   - Install server dependencies: `pipenv shell`
-   - Go to client `cd client/` and install dependencies `npm i`
-   - While you at the client folder Start the client: `npm run dev`
-   - Go back where main_app is there and start the server `python manage.py runserver`
+- Clone the repository.
+- create python pipenv: `pipenv shell`
+- Install server dependencies: `pipenv install`
+- Go to client `cd client/` and install dependencies `npm i`
+- While you at the client folder Start the client: `npm run dev`
+- Go back where main_app is there and start the server `python manage.py runserver`
 
 Open the application in your browser at `http://localhost:5173`
 
 ## Technologies Used:
 
 ### PDR Stack:
-  - PostgreSQL
-  - Django REST Framework (Python)
-  - React.js
+
+- PostgreSQL
+- Django REST Framework (Python)
+- React.js
 
 <br>
 
 ### Client packages:
 
-| Package           | Version   |
-|-------------------|-----------|
-| axios             | ^1.11.0   |
-| chart.js          | ^4.5.0    |
-| react             | ^19.1.0   |
-| react-chartjs-2   | ^5.3.0    |
-| react-dom         | ^19.1.0   |
-| react-router-dom  | ^7.7.1    |
-| vite              | ^7.0.4    |
-
+| Package          | Version |
+| ---------------- | ------- |
+| axios            | ^1.11.0 |
+| chart.js         | ^4.5.0  |
+| react            | ^19.1.0 |
+| react-chartjs-2  | ^5.3.0  |
+| react-dom        | ^19.1.0 |
+| react-router-dom | ^7.7.1  |
+| vite             | ^7.0.4  |
 
 ### Server packages:
 
-| Package                           | Version   |
-|-----------------------------------|-----------|
-| django                            | *         |
-| psycopg2-binary                   | *         |
-| djangorestframework               | *         |
-| djangorestframework-simplejwt     | *         |
-| python_version                    | 3.12      |
-
-
+| Package                       | Version |
+| ----------------------------- | ------- |
+| django                        | \*      |
+| psycopg2-binary               | \*      |
+| djangorestframework           | \*      |
+| djangorestframework-simplejwt | \*      |
+| python_version                | 3.12    |
 
 <br>
 
 ## Future Enhancements:
 
-1. AI to give advice
-3. show errors to the client
+1. Add budget and expense context data to the ai.
+2. Show errors to the client.
+3. Enhance the Analytics page layout.
+4. The ability to choose a different currency.
