@@ -146,6 +146,9 @@ Open the application in your browser at `http://localhost:5173`
 ## Future Enhancements:
 
 1. Add budget and expense context data to the ai.
-2. Show errors to the client.
+2. Show errors to the client (Error Logging & Feedback Panel).
 3. Enhance the Analytics page layout.
 4. The ability to choose a different currency.
+5. Goal-Based Budget Planning
+6. Add function to sort budgets/expense.
+7. Smart Alerts.
