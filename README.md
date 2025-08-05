@@ -117,19 +117,18 @@ Open the application in your browser at `http://localhost:5173`
 - Django REST Framework (Python)
 - React.js
 
-<br>
-
 ### Client packages:
 
-| Package          | Version |
-| ---------------- | ------- |
-| axios            | ^1.11.0 |
-| chart.js         | ^4.5.0  |
-| react            | ^19.1.0 |
-| react-chartjs-2  | ^5.3.0  |
-| react-dom        | ^19.1.0 |
-| react-router-dom | ^7.7.1  |
-| vite             | ^7.0.4  |
+| Package                    | Version |
+| -------------------------- | ------- |
+| axios                      | ^1.11.0 |
+| chart.js                   | ^4.5.0  |
+| react                      | ^19.1.0 |
+| react-chartjs-2            | ^5.3.0  |
+| react-dom                  | ^19.1.0 |
+| react-circular-progressbar | ^2.2.0  |
+| react-router-dom           | ^7.7.1  |
+| vite                       | ^7.0.4  |
 
 ### Server packages:
 
