@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
+import os
+from django.core.management.utils import get_random_secret_key
+print(get_random_secret_key())
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -78,17 +82,27 @@ WSGI_APPLICATION = "BudgetItWiser_Config.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "budgetItWise",
+#         "USER": "postgres",
+#         "PASSWORD": "123456789",
+#         "HOST": "172.27.192.1",
+#         "PORT": "5432",
+#     }
+# }
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "budgetItWise",
-        "USER": "postgres",
-        "PASSWORD": "123456789",
-        "HOST": "172.27.192.1",
-        "PORT": "5432",
+        "NAME": os.environ.get("PGDATABASE"),
+        "USER": os.environ.get("PGUSER"),
+        "PASSWORD": os.environ.get("PGPASSWORD"),
+        "HOST": os.environ.get("PGHOST"),
+        "PORT": os.environ.get("PGPORT", "5432"),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -136,12 +150,19 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 #     'http://localhost:5173'
 # ]
 
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:5173",
-#     "http://127.0.0.1:5173",
-# ]
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "https://budgetitwiser-production.up.railway.app/",
+]
 
-CORS_ALLOW_ALL_ORIGINS = True
+ALLOWED_HOSTS = [
+    "django-rest-starter-production-2898.up.railway.app",
+    "localhost",
+    "127.0.0.1",
+]
+
+# CORS_ALLOW_ALL_ORIGINS = True
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
