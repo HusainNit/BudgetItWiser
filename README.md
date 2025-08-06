@@ -30,7 +30,7 @@ An AI-driven budgeting assistant offers personalized financial insights, assessm
 
 ## Deployed link:
 
-[!_ still working on it _!]()
+https://budgetitwiser-production.up.railway.app/
 
 <br>
 
@@ -134,13 +134,14 @@ Open the application in your browser at `http://localhost:5173`
 
 | Package                       | Version |
 | ----------------------------- | ------- |
-| django                        | \*      |
-| psycopg2-binary               | \*      |
-| djangorestframework           | \*      |
-| djangorestframework-simplejwt | \*      |
+| django                        | 5.2.4   |
+| psycopg2-binary               | 2.9.10  |
+| djangorestframework           | 3.16.0  |
+| djangorestframework-simplejwt | 5.5.1   |
 | python_version                | 3.12    |
+| gunicorn                      | 23.0.0  |
 
-<br>
+For more info, see the [`requirements.txt`](https://github.com/HusainNit/BudgetItWiser/blob/main/requirements.txt).
 
 ## Future Enhancements:
 
