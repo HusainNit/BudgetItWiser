@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { SignInUser } from "../services/auth";
 
-// TODO edit the sign in page
+
 const SignIn = ({ setUser }) => {
   let navigate = useNavigate();
 

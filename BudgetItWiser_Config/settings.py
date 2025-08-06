@@ -14,6 +14,7 @@ from pathlib import Path
 from datetime import timedelta
 import os
 from django.core.management.utils import get_random_secret_key
+
 print(get_random_secret_key())
 
 
@@ -51,7 +52,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
-    "corsheaders.middleware.CorsMiddleware",  # Moved before CommonMiddleware
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -82,16 +83,6 @@ WSGI_APPLICATION = "BudgetItWiser_Config.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql",
-#         "NAME": "budgetItWise",
-#         "USER": "postgres",
-#         "PASSWORD": "123456789",
-#         "HOST": "172.27.192.1",
-#         "PORT": "5432",
-#     }
-# }
 
 DATABASES = {
     "default": {
@@ -146,10 +137,6 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-# CORS_ORIGIN_WHITELIST = [
-#     'http://localhost:5173'
-# ]
-
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
@@ -162,7 +149,6 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
 ]
 
-# CORS_ALLOW_ALL_ORIGINS = True
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (

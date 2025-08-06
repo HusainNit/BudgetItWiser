@@ -2,7 +2,7 @@ const Home = () => {
   return (
     <>
       <section className="hero">
-        <h1>Welcome to BugetitWiser</h1>
+        <h1>Welcome to BugetItWiser</h1>
         <p>
           Smarter budgeting starts here. Track, plan, and achieve your financial
           goals with clarity and confidence.

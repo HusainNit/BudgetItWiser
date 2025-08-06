@@ -8,7 +8,6 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 
 # Create your views here.
-# TODO fix the get_querySet for budget and the expenses
 
 
 class UserViewSet(generics.RetrieveUpdateDestroyAPIView):
